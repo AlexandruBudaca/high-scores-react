@@ -1,6 +1,7 @@
 import React from "react";
 
 const Card = ({ name, scores }) => {
+  scores.sort((a, b) => (a.s > b.s ? -1 : 1));
   return (
     <div className="card-country">
       <h2>HIGH SCORES: {name}</h2>
