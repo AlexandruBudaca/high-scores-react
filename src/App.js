@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>High Scores per Country</h1>
-        {allCountryScores.map((country) => (
-          <Card {...country} />
+        {allCountryScores.map((country, index) => (
+          <Card key={index} {...country} />
         ))}
       </header>
     </div>
