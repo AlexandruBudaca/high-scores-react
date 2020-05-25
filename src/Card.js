@@ -1,11 +1,11 @@
 import React from "react";
 
-const Card = (country) => {
+const Card = ({ name, scores }) => {
   return (
     <div className="card-country">
-      <h2>HIGH SCORES: {country.name}</h2>
+      <h2>HIGH SCORES: {name}</h2>
       <div className="card-details">
-        {country.scores.map((score, index) => (
+        {scores.map((score, index) => (
           <div key={index} className="card-scores">
             <div className="score-name">
               <h3>{score.n.toUpperCase()}</h3>
