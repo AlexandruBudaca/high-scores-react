@@ -4,8 +4,8 @@ import Score from "./Score";
 
 const Card = ({ name, scores, descOrder }) => {
   const sortedScores = descOrder
-    ? [...scores].sort((a, b) => (a.s > b.s ? -1 : 1))
-    : [...scores].sort((a, b) => (a.s < b.s ? -1 : 1));
+    ? [...scores].sort((a, b) => (a.s < b.s ? -1 : 1))
+    : [...scores].sort((a, b) => (a.s > b.s ? -1 : 1));
 
   return (
     <div>
