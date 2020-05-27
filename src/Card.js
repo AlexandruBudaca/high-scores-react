@@ -1,29 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import ScoreNames from "./ScoreNames";
+import Score from "./Score";
 
-const Card = ({ name, scores }) => {
-  const [toggle, setToggle] = useState(
-    scores.sort((a, b) => (a.s > b.s ? -1 : 1))
-  );
-
-  const switchScores = () => {
-    const newToggle = [...toggle].sort((a, b) => (a.s < b.s ? -1 : 1));
-    setToggle(newToggle);
-  };
+const Card = ({ name, scores, descOrder }) => {
+  const sortedScores = descOrder
+    ? [...scores].sort((a, b) => (a.s > b.s ? -1 : 1))
+    : [...scores].sort((a, b) => (a.s < b.s ? -1 : 1));
 
   return (
     <div>
       <div className="card-country">
         <h2>HIGH SCORES: {name}</h2>
-        <button onClick={switchScores}>Ascending</button>
         <div className="card-details">
-          {toggle.map((score, index) => (
+          {sortedScores.map((score, index) => (
             <div key={index} className="card-scores">
-              <div className="score-name">
-                <h3>{score.n.toUpperCase()}</h3>
-              </div>
-              <div className="score">
-                <h3>{score.s}</h3>
-              </div>
+              <ScoreNames scoreName={score} />
+              <Score score={score} />
             </div>
           ))}
         </div>
