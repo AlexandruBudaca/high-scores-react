@@ -17,7 +17,7 @@ function App() {
             setDescOrder(!descOrder);
           }}
         >
-          Ascending
+          {descOrder ? "Descending" : "Ascending"}
         </button>
         {allCountryScores.map((country, index) => (
           <Card key={index} {...country} descOrder={descOrder} />
