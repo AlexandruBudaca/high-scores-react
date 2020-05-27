@@ -61,7 +61,9 @@
 
 button {
   margin-bottom: 10px;
-  background-color: lightgreen;
+  background-color: red;
   padding: 10px;
   font-size: 12px;
+  color: white;
+  font-weight: 600;
 }
